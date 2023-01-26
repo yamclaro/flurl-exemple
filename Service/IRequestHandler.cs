@@ -1,10 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Flurl.Http;
+﻿using Flurl.Http;
 using FlurlExamples.Model;
 
-namespace FlurlExamples
+namespace FlurlExamples.Service
 {
     public interface IRequestHandler
     {

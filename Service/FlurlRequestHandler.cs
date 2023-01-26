@@ -1,9 +1,8 @@
 ﻿using Flurl;
 using Flurl.Http;
 using FlurlExamples.Model;
-using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace FlurlExamples;
+namespace FlurlExamples.Service;
 
 public class FlurlRequestHandler : IRequestHandler
 {
@@ -17,10 +16,10 @@ public class FlurlRequestHandler : IRequestHandler
     {
         var result = await _configuration["Serviço:UrlBase"]
            .AppendPathSegments("user", "repos")
-           //Caso tenha que passar algo no header 
-           //.WithHeader("UserAgent", "UserAgentValue")
-           //Caso tenha token 
-           //.WithOAuthBearerToken("token")
+            //Caso tenha que passar algo no header 
+            //.WithHeader("UserAgent", "UserAgentValue")
+            //Caso tenha token 
+            //.WithOAuthBearerToken("token")
             .GetJsonAsync<List<Repository>>();
         return result;
     }
